@@ -1,1 +1,2 @@
 dashboard-app-afqtdaihg6pcv3wryyfpkh
+.streamlit.app
