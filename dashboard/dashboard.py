@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import os
 from babel.numbers import format_currency
 sns.set(style='dark')
 
@@ -36,7 +37,8 @@ def create_holiday_df (df):
 def create_hour_df (df):
     hour_df = df.groupby(by='hr').cnt.sum().sort_values(ascending=False).reset_index()
     return hour_df
-
+file_path = os.path.join(os.path.dirname(__file__), "day_df")
+file_path = os.path.join(os.path.dirname(__file__), "hour_df")
 day_df = pd.read_csv ("day.csv")
 hour_df = pd.read_csv("hour.csv")
 
